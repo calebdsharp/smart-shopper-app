@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmls:th="http://thymeleaf.org">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <link rel="stylesheet" th:href="@{/editMeal.css}">
+
+  <title th:text="|Edit ${meal.name}|">Edit</title>
+
+</head>
+
+<body>
+  <nav>
+    <div>
+      <h1 th:text="${meal.name}"> </h1>
+    </div>
+  </nav>
+  <main>
+    <form id="editMealName" method="post">
+      <div class="container">
+        <h3>Meal Name</h3>
+        <input type="text" th:value="${meal.name}" name='name' class='meal-name-input' required data-value-missing=”Translate(‘Required’)” />
+        <input type="hidden" th:value="${meal.id}" class="meal-id-input" />
+        <dv class="edit-ingredients mealHandles">
+          <h3>Ingredients</h3>
+          <div class='ingredientInput' th:each="mealIngredient:${meal.mealIngredients}">
+            <input class="ingredientName" type="text" th:value="${mealIngredient.ingredient.name}" />
+            <input class="ingredientQty" type="number" th:value=${mealIngredient.quantity} name="Qty"></input>
+            <button class="remove-ingredient-button">x</button>
+          </div>
+      </div>
+
+      <div class="saveMeal">
+        <button class="saveButton submit"> SAVE MEAL</button>
+        <button class="cancelButton cancel"><a href="/meals"> CANCEL </a>
+        </button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <script src="/edit-meal.js"></script>
+
+</body>
+
+</html>

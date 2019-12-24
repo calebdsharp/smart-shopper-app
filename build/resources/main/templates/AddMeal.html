@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <link rel="stylesheet" th:href="@{/addMeal.css}">
+
+  <title>Add Meal</title>
+</head>
+
+<body>
+
+  <nav>
+    <h1> Create New Meal </h1>
+  </nav>
+  <main>
+    <form id="addMealName" method="post">
+      <div class="container">
+        <h3>Add Meal Name</h3>
+        <input class='mealNameInput' type="text" name="mealName" placeholder="Meal Name" required data-value-missing=”Translate(‘Required’)”>
+
+        <ul class='addIngredient'>
+          <h3>Add Ingredient</h3>
+        </ul>
+
+      </div>
+
+
+      <div>
+        <!-- <button onclick="saveMeal()" class="submit" th:formaction="@{/add-meal}">SAVE MEAL</button> -->
+        <button class="submit" th:formaction="@{/add-meal}">SAVE MEAL</button>
+        <button class="cancel" th:formaction="@{/meals}"><a href="/meals"> CANCEL </a>
+        </button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <script src="/addMeal.js"> </script>
+</body>
+
+</html>

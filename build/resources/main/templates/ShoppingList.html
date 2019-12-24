@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <link rel="stylesheet" th:href="@{/shoppingList.css}">
+  <title>Shopping List</title>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="nav-right">
+      <h1>Shopping List</h1>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <ul id='shoppinglist'>
+        <li th:each="shoppingListItem : ${shoppingListItems}" class="shoppingListGridContainer">
+          <div>
+            <h5 th:text="${shoppingListItem.ingredient.name}"></h5>
+          </div>
+          <div>
+            <p th:text="${shoppingListItem.quantity}"></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="shoppinglistbuttons">
+
+      <input type="text" id="miscinput" placeholder="Add Item">
+      <input type="number" id="miscInputQty" placeholder="Qty">
+      <span onclick="newElement()" class="addBtn">Add</span>
+
+      <!-- <button class="addItemButton">ADD ITEM</button>-->
+      <a href="/meals"><button class="home">BACK TO MEALS</button></a>
+    </div>
+  </main>
+  <script src="/shoppingList.js"> </script>
+</body>
+
+</html>
