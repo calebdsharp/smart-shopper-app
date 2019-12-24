@@ -6,7 +6,7 @@ function incrementMealCount() {
   for (let i = 0; i < mealIds.length; i++) {
     mealIds[i].parentElement.addEventListener('click', () => {
       fetch(
-        'http://localhost:5000/api/mealPlan/increaseCount/' + mealIds[i].value,
+        'http://localhost:8080/api/mealPlan/increaseCount/' + mealIds[i].value,
         {
           method: 'GET',
         }
@@ -23,7 +23,7 @@ function decrementMealCount() {
   for (let i = 0; i < mealIds.length; i++) {
     mealIds[i].parentElement.addEventListener('click', () => {
       fetch(
-        'http://localhost:5000/api/mealPlan/decreaseCount/' + mealIds[i].value,
+        'http://localhost:8080/api/mealPlan/decreaseCount/' + mealIds[i].value,
         {
           method: 'GET',
         }
@@ -40,7 +40,7 @@ async function updateCurrentMealCount() {
   const mealCounts = document.querySelectorAll('.currentMealCount');
   for (let i = 0; i < mealCounts.length; i++) {
     let url =
-      'http://localhost:5000/api/mealPlan/mealCount/' +
+      'http://localhost:8080/api/mealPlan/mealCount/' +
       mealCounts[i].querySelector('.countMealId').value;
     let mealPlanCount = await fetch(url).then(response => response.json());
     console.log(mealPlanCount);
