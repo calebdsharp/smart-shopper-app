@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+html {
+  --independence: #435362;
+  --smokey-black: #0F0C0C;
+  --gainsboro: #DDDDDD;
+  --azureish-white: #E1EFF6;
+  --green: #27ae60;
+  --paris-green: #49CE81;
+  --white-smoke: #F4F4F4;
+  --nyanza: #E5FFCD;
+  --aero-blue: #d3f1df;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "container";
+  grid-template-rows: 80px 1fr;
+  margin: 0 auto;
+  max-width: 950px;
+  height: 100vh;
+}
+
+
+main {
+  background-color: var(--white-smoke);
+}
+
+nav {
+  background-image: radial-gradient(var(--paris-green), var(--green));
+  grid-area: nav;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-smoke);
+  font-size: 24px;
+  font-style: bold;
+}
+
+nav h1 {
+  color: var(--nyanza);
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+button {
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+}
+
+nav>a button, .nav-right>button {
+  margin: .25rem;
+  height: 3rem;
+  width: 5rem;
+  background-color: var(--independence);
+  color: var(--nyanza);
+}
+
+.fa-shopping-basket {
+  font-size: 1.25rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  margin: 0 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--independence);
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  color: var(--independence);
+}
+
+.header p:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1.75rem;
+}
+
+.mealList {
+  display: grid;
+  grid-template-rows: 3rem;
+  line-height: 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border-bottom: 1px solid var(--green);
+}
+
+.mealList a {
+  display: flex;
+  color: var(--independence);
+  font-weight: bolder;
+  font-size: 1.25rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mealList p {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: .75rem;
+}
+
+.mealHandles {
+  display: flex;
+}
+
+
+.mealHandles button:first-of-type {
+  margin-right: .75rem;
+}
+
+
+.mealHandles button {
+  justify-content: flex-end;
+  align-self: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: inherit;
+  height: 2rem;
+  width: 2rem;
+}

@@ -1,0 +1,107 @@
+body {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "container";
+  grid-template-rows: 80px 1fr;
+  margin: 0 auto;
+  max-width: 950px;
+  height: 100vh;
+}
+
+h1 {
+  color: var(--nyanza);
+}
+
+nav {
+  justify-content: center;
+}
+
+button {
+  height: auto;
+  width: auto;
+  padding: 0.25rem;
+  margin: 4px;
+  font-size: 1rem;
+}
+
+.mealHandles button {
+  font-size: 0.75rem;
+  height: auto;
+  width: auto;
+}
+
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container h3 {
+  margin-bottom: 1rem;
+}
+
+.container h3:last-of-type {
+  margin-top: 1rem;
+}
+
+.mealHandles {
+  flex-direction: column;
+}
+
+.mealHandles>div {
+  display: flex;
+}
+
+.container .meal-name-input {
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.container input:first-of-type {
+  padding-left: 0.25rem;
+}
+
+.container input {
+  margin-right: 2px;
+  border: solid 2px var(--gainsboro);
+}
+
+.ingredientQty {
+  width: 15%;
+  padding-left: 0;
+  text-align: center;
+}
+
+.edit-ingredients button {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--independence);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.submit {
+  margin-left: 1rem;
+  color: var(--nyanza);
+  border-radius: 4px;
+  background-color: var(--green);
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 3px, var(--green);
+}
+
+.cancel {
+  background-color: var(--aero-blue);
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}

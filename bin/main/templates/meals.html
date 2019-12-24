@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <title>Meals Homepage</title>
+</head>
+
+<body>
+  <nav class="nav">
+    <a href="/add-meal"><button>NEW MEAL</button></a>
+    <h1>Lazy Grocer</h1>
+    <a href="/shopping-list"><button class="shoppingListButton"><i class="fas fa-shopping-basket"></i></button></a>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="header">
+        <p>Meal Name</p>
+        <p>Qty.</p>
+      </div>
+      <div th:each="meal: ${meals}">
+        <div class="mealList">
+          <a th:href="@{/edit-meal/{id}(id=${meal.id})}" th:text="${meal.name}"></a>
+          <div class="mealHandles">
+            <button type="button" name="minus" class="decreaseButton">
+              <input type="hidden" th:value="${meal.id}" class="decrementMealId" />
+              -
+            </button>
+            <p class="currentMealCount">
+              <input type="hidden" th:value="${meal.id}" class="countMealId" />
+            </p>
+            <button type="button" name="plus" class="increaseButton">
+              <input type="hidden" th:value="${meal.id}" class="incrementMealId" />
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/meals.js"></script>
+</body>
+
+</html>
